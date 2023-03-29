@@ -69,7 +69,7 @@ def NormalUser():
         with st.spinner('Hang On While We Cook Magic For You...'):
             time.sleep(3)
         file_bytes = get_base64_of_file(pdf_file)
-        st.write(f'<iframe src="data:application/pdf;base64,{file_bytes}" width="600" height="900"></iframe>', unsafe_allow_html=True)
+        #st.write(f'<iframe src="data:application/pdf;base64,{file_bytes}" width="600" height="900"></iframe>', unsafe_allow_html=True)
         resume_text = convert_pdf_to_txt(pdf_file)
         resume_data = ResumeParser(pdf_file).get_extracted_data()
         if resume_data:
