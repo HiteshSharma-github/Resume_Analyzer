@@ -14,7 +14,7 @@ def AdminUser():
         ad_user = st.text_input("Username")
         ad_password = st.text_input("Password", type='password')
         if st.button('Login'):
-            if ad_user == 'admin' and ad_password == '123':
+            if ad_user == 'admin' and ad_password == '333':
                 st.success("Welcome Admin")
                 st.write('''<b>Vistors</b> <img src="https://counter4.optistats.ovh/private/freecounterstat.php?c=baukt6rkh7fz3ee4l3r9g31b29hrmq17"
                              border="0"></a> 
