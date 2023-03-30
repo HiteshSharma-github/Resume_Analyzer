@@ -18,22 +18,15 @@ from pdfminer3.converter import TextConverter
 
 ###### Import Courses and  Database File ######
 
-from Courses import resume_videos,interview_videos
-from Courses import web_course,soft_course,java_course,py_course,cpp_course,ds_course,test_course,embd_course,dnet_course
+from Courses import*
 from database import CreateTable,insert_data
-from Courses import web_keyword,soft_keyword,java_keyword,py_keyword,cpp_keyword,ds_keyword,test_keyword,embd_keyword,dnet_keyword
+
 
 ###### Machine Learning Algortihm ######
 
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import CountVectorizer
 
-
-def get_base64_of_file(file):
-    if file is None:
-        return None
-    else:
-        return base64.b64encode(file.read()).decode()
 
 def convert_pdf_to_txt(pdf_file):
     resource_manager = PDFResourceManager()
@@ -64,11 +57,11 @@ def course_recommender(course_list):
 
 
 def NormalUser():
-    pdf_file = st.file_uploader("Choose your Resume", type=['pdf', 'docx', 'doc'])
+    pdf_file = st.file_uploader("Choose your Resume", type=['pdf'])
     if pdf_file is not None:
         with st.spinner('Hang On While We Cook Magic For You...'):
             time.sleep(3)
-        file_bytes = get_base64_of_file(pdf_file)
+        file_bytes = base64.b64encode(pdf_file.read()).decode()
         #st.write(f'<iframe src="data:application/pdf;base64,{file_bytes}" width="600" height="900"></iframe>', unsafe_allow_html=True)
         resume_text = convert_pdf_to_txt(pdf_file)
         resume_data = ResumeParser(pdf_file).get_extracted_data()
