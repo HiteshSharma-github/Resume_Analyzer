@@ -1,5 +1,3 @@
-###### Smile Resume Analyser ######
-
 ###### Importing Required Modules ######
 
 import streamlit as st
@@ -12,17 +10,12 @@ from admin import AdminUser
 from selection_tool import Selection_Tool
 from about import About
 
-@st.cache(suppress_st_warning=True)
-
-def install(package):
-    subprocess.check_call([sys.executable, "pip", "install", package])
-    
 
 ###### Main function run() ######
 def main():
     st.set_page_config(
     page_title="AI Resume Analyser",
-    page_icon='./Images/mm.png')
+    page_icon='logo.gif')
     
     selected=option_menu(
         menu_title="RUHVSoft LLP",
@@ -33,9 +26,7 @@ def main():
         orientation="horizontal",)
     
     st.title("AI Resume Analyser")
-  
-
-    
+   
     ###### Code for client side (USER) ######
 
     if selected == 'Resume':
@@ -53,7 +44,9 @@ def main():
         
     else:
         AdminUser()
-        
+    html_code = '<p style="display:inline;">Total Resume Scanned till now: </p> <a href="https://www.hitwebcounter.com" target="_blank"><img src="https://hitwebcounter.com/counter/counter.php?page=8423204&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" /></a>'
+    st.markdown(html_code, unsafe_allow_html=True)
+    
         
 ###### Main Function ######
         
