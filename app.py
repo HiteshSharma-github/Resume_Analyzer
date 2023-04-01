@@ -31,6 +31,8 @@ def main():
 
     if selected == 'Resume':
         NormalUser()
+        html_code = '<p style="display:inline;">Total Resume Scanned till now: </p> <a href="https://www.hitwebcounter.com" target="_blank"><img src="https://hitwebcounter.com/counter/counter.php?page=8423204&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" /></a>'
+        st.markdown(html_code, unsafe_allow_html=True)
         
     elif selected=='Selection-Tool':
         Selection_Tool()
@@ -44,8 +46,7 @@ def main():
         
     else:
         AdminUser()
-    html_code = '<p style="display:inline;">Total Resume Scanned till now: </p> <a href="https://www.hitwebcounter.com" target="_blank"><img src="https://hitwebcounter.com/counter/counter.php?page=8423204&style=0006&nbdigits=5&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" /></a>'
-    st.markdown(html_code, unsafe_allow_html=True)
+
     
         
 ###### Main Function ######
